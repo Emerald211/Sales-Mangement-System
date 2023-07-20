@@ -23,14 +23,14 @@ const Signin = () => {
   };
   console.log("Rendered");
   return (
-    <div className=" mt-5 md:mb-10 font-serrat flex flex-col justify-center items-center h-screen">
+    <div className=" mt-5 md:mb-5 font-serrat flex flex-col justify-center items-center h-screen">
       <div className=" rounded-[50%] flex justify-center items-center py-7 px-7 bg-white">
-        <h1 className=" text-2xl md:text-3xl lg:text-5xl text-amber-500 font-bold">
+        <h1 className=" text-2xl md:text-3xl lg:text-3xl text-amber-500 font-bold">
           GadgetTrac 1.0
         </h1>
       </div>
 
-      <div className=" w-[300px] md:w-[500px] text-center italic text-xs mt-5 md:mt-10">
+      <div className=" w-[300px] md:w-[500px] text-center italic text-xs mt-5 md:mt-5">
         <h3 className=" text-slate-500">
           GadgetTrac is a cutting-edge Device and Gadget Sales Management System
           that empowers businesses to efficiently track, manage, and optimize
@@ -51,7 +51,7 @@ const Signin = () => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmitAction)}
-        className=" w-[300px] md:w-[500px] bg-white mt-5 md:mt-24 px-8 py-8"
+        className=" w-[300px] md:w-[500px] bg-white mt-5 md:mt-12 px-8 py-8"
       >
         <div className="relative z-0 w-full mb-6 group">
           <input
