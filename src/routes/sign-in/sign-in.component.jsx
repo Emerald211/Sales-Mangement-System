@@ -1,9 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { customSignInWIthEmailAndPassword } from "../../utils/firebase/firebase";
+import {
+  customSignInWIthEmailAndPassword,
+  getDocumentsFromCollection,
+} from "../../utils/firebase/firebase";
+import { useDispatch } from "react-redux";
+import { setOrders } from "../../store/orders/orders.action";
 
 const Signin = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getRes = async () => {
+      const data = await getDocumentsFromCollection();
+
+      console.log(data);
+
+      dispatch(setOrders(data));
+
+      return data;
+    };
+
+    return getRes;
+  }, []);
+
   const [isLoading, setisLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();

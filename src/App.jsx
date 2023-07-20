@@ -12,16 +12,17 @@ import {
 } from "./utils/firebase/firebase";
 import { customOnAUthStateChange } from "./utils/firebase/firebase";
 import Orders from "./routes/orders/orders.component.";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "./store/user/user.action";
 import { setOrders } from "./store/orders/orders.action";
 import Inbox from "./routes/inbox/inbox.component";
 import Users from "./routes/users/user.component";
 import Products from "./routes/products/product.component";
 import { setProduct } from "./store/product/product.action";
+import { selectOrders } from "./store/orders/orders.selector";
 
 function App() {
-  // console.log(orders[0]);
+  const orders = useSelector(selectOrders)
 
   const dispatch = useDispatch();
 
