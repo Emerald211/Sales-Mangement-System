@@ -3,45 +3,56 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { customSignInWIthEmailAndPassword } from "../../utils/firebase/firebase";
 
-
 const Signin = () => {
-
-  const [ isLoading, setisLoading] = useState(false)
+  const [isLoading, setisLoading] = useState(false);
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
 
   const onSubmitAction = async (data) => {
-    setisLoading(true)
+    setisLoading(true);
     const { email, password } = data;
-    console.log("___FORM_DATA___,", data);
 
     try {
-      const response = await customSignInWIthEmailAndPassword(email, password);
+      await customSignInWIthEmailAndPassword(email, password);
 
-      console.log(response);
-
-      navigate("/home")
+      navigate("/home");
     } catch (err) {
-      console.log(err.message);
-      alert(err.message)
-      setisLoading(false)
+      alert(err.message);
+      setisLoading(false);
     }
   };
   console.log("Rendered");
   return (
-    <div className="  mb-10 font-serrat flex flex-col justify-center items-center h-screen">
+    <div className=" mt-5 md:mb-10 font-serrat flex flex-col justify-center items-center h-screen">
       <div className=" rounded-[50%] flex justify-center items-center py-7 px-7 bg-white">
-      <h1 className="  text-5xl text-amber-500 font-bold">GadgetTrac 1.0</h1>
+        <h1 className=" text-2xl md:text-3xl lg:text-5xl text-amber-500 font-bold">
+          GadgetTrac 1.0
+        </h1>
       </div>
-      
-      <div className=" w-[500px] text-center italic text-xs mt-10">
+
+      <div className=" w-[300px] md:w-[500px] text-center italic text-xs mt-5 md:mt-10">
         <h3 className=" text-slate-500">
-        GadgetTrac is a cutting-edge Device and Gadget Sales Management System that empowers businesses to efficiently track, manage, and optimize the entire sales lifecycle of gadgets. From inventory management to order processing and sales analytics, GadgetTrac provides real-time insights and seamless automation, streamlining operations and boosting sales performance. With its user-friendly interface and powerful features, GadgetTrac ensures businesses stay ahead in the fast-paced world of gadget sales.
+          GadgetTrac is a cutting-edge Device and Gadget Sales Management System
+          that empowers businesses to efficiently track, manage, and optimize
+          the entire sales lifecycle of gadgets. From inventory management to
+          order processing and sales analytics, GadgetTrac provides real-time
+          insights and seamless automation, streamlining operations and boosting
+          sales performance. With its user-friendly interface and powerful
+          features, GadgetTrac ensures businesses stay ahead in the fast-paced
+          world of gadget sales.
         </h3>
 
-        <h4>(This is test mode, Kindly login email as <span className=" font-bold text-amber-500">admin@gmail.com</span> and password as <span className=" font-bold text-amber-500">admin2023</span>)</h4>
+        <h4>
+          (This is test mode, Kindly login email as{" "}
+          <span className=" font-bold text-amber-500">admin@gmail.com</span> and
+          password as{" "}
+          <span className=" font-bold text-amber-500">admin2023</span>)
+        </h4>
       </div>
-      <form onSubmit={handleSubmit(onSubmitAction)} className=" w-[500px] bg-white mt-24 px-8 py-8">
+      <form
+        onSubmit={handleSubmit(onSubmitAction)}
+        className=" w-[300px] md:w-[500px] bg-white mt-5 md:mt-24 px-8 py-8"
+      >
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="email"
