@@ -2,9 +2,10 @@ import { deleteDoc, doc } from "firebase/firestore";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  approveItemFromCart,
-  deleteFromCart,
-  deleteOrders,
+  approveOrder,
+
+  deleteOrder,
+
 } from "../../store/orders/orders.action";
 import { selectOrders } from "../../store/orders/orders.selector";
 
@@ -27,18 +28,18 @@ const TableColumn = ({ order }) => {
     console.log(id);
 
     deleteocumentsFroomCollections(id);
-    dispatch(deleteFromCart(orders, order));
+    dispatch(deleteOrder(orders, order));
   };
 
   const approveOrdersHandlers = (id) => {
     updateDocumentsFromCollection(id);
 
-    dispatch(approveItemFromCart(orders, order));
+    dispatch(approveOrder(orders, order));
   };
 
   return (
     <>
-      <tr className="bg-white border-b  hover:bg-gray-50 dark:hover:bg-gray-600">
+      <tr className="bg-white border-b ">
         <td className="w-4 p-4">
           <div className="flex items-center">
             <input

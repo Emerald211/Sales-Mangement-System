@@ -79,35 +79,35 @@ const Dashboard = () => {
         </div>
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
           <div style={{color: "#FF5427"}} className="grid grid-cols-3 gap-4 mb-4">
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex gap-4 items-center justify-center h-24 rounded">
-              <TbChartPieFilled style={{color: "#F7C2B4"}} className=" text-5xl " />
+            <div style={{backgroundColor: "#FAE1DA"}} className="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center h-24 rounded">
+              <TbChartPieFilled style={{color: "#F7C2B4"}} className=" text-2xl md:text-5xl " />
               <div>
-                <h1 className=" font-bold text-2xl">${totalRevenue}</h1>
-                <p className=" text-sm text-gray-400 dark:text-gray-500">
+                <h1 className=" font-bold text-sm md:text-2xl">${totalRevenue}</h1>
+                <p className=" text-[5px] md:text-sm text-gray-400 dark:text-gray-500">
                   Total Revenue
                 </p>
               </div>
             </div>
-            <div  style={{backgroundColor: "#FAE1DA"}} className="flex gap-4 items-center justify-center h-24 rounded bg-gray-50 dark:bg-slate-300">
-              <GiShoppingCart style={{color: "#F7C2B4"}} className=" text-5xl text-gray-700" />
+            <div  style={{backgroundColor: "#FAE1DA"}} className="flex flex-col md:flex-row gap-1 text-center md:gap-4 items-center justify-center h-24 rounded bg-gray-50 dark:bg-slate-300">
+              <GiShoppingCart style={{color: "#F7C2B4"}} className=" text-2xl md:text-5xl text-gray-700" />
               <div>
-                <h1 className=" font-bold text-2xl">{totalOrders}</h1>
-                <p className=" text-sm text-gray-400 dark:text-gray-500">
+                <h1 className=" font-bold text-sm md:text-2xl">{totalOrders}</h1>
+                <p className=" text-[5px] md:text-sm text-gray-400 dark:text-gray-500">
                   Total Orders
                 </p>
               </div>
             </div>
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex gap-4 items-center justify-center h-24 rounded bg-gray-50 dark:bg-slate-300">
-              <MdInventory2 style={{color: "#F7C2B4"}} className=" text-5xl text-gray-700" />
+            <div style={{backgroundColor: "#FAE1DA"}} className="flex flex-col md:flex-row gap-1 text-center items-center justify-center h-24 rounded bg-gray-50 dark:bg-slate-300">
+              <MdInventory2 style={{color: "#F7C2B4"}} className=" text-2xl md:text-5xl text-gray-700" />
               <div>
-                <h1 className=" font-bold text-2xl">{totalOrders}</h1>
-                <p className=" text-sm text-gray-400 dark:text-gray-500">
+                <h1 className=" font-bold text-sm md:text-2xl">{totalOrders}</h1>
+                <p className="  text-[5px] md:text-sm text-gray-400 dark:text-gray-500">
                   Total Sales
                 </p>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center rounded bg-gray-50 h-56 dark:bg-slate-300">
               <Doughnut
                 data={{
@@ -146,26 +146,11 @@ const Dashboard = () => {
               <Table />
             </div>
           </div>
-          <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-slate-300">
-            <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-          </div>
-          <div  className="grid grid-cols-2 gap-4">
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-slate-300">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-            </div>
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-slate-300">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-            </div>
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-slate-300">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-            </div>
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-slate-300">
-              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-            </div>
+     
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

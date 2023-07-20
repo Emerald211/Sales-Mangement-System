@@ -4,44 +4,26 @@ import { ORDERS_ACTION_TYPES } from "./orders.type";
 export const setOrders = (orders) =>
   createAction(ORDERS_ACTION_TYPES.SET_CURRENT_ORDERS, orders);
 
-export const deleteOrders = (orders) => createAction(ORDERS_ACTION_TYPES.DELETE_ORDERS, orders);
-
-const deleteFromCartFunction = (cartItem, productToDelete) => {
-  return cartItem.filter((eachCartItem) => {
-    return eachCartItem.id !== productToDelete.id;
-  });
+export const deleteOrder = (orders, orderToDelete) => {
+  const newOrders = orders.filter((order) => order.id !== orderToDelete.id);
+  return createAction(ORDERS_ACTION_TYPES.SET_CURRENT_ORDERS, newOrders);
 };
 
-export const deleteFromCart = (cartItem, productToDelete) => {
-  const newCartItems = deleteFromCartFunction(cartItem, productToDelete);
-
-  return createAction(ORDERS_ACTION_TYPES.SET_CURRENT_ORDERS, newCartItems);
+const approveOrderFunction = (orders, orderToApprove) => {
+  const mainOrderList = orders.filter((order) => order.id !== orderToApprove.id);
+  const filteredOrderList = orders.filter((order) => order.id === orderToApprove.id);
+  const filterOrderObject = filteredOrderList[0];
+  const newFilterOrderObject = { ...filterOrderObject, approved: true };
+  mainOrderList.push(newFilterOrderObject);
+  return mainOrderList;
 };
 
-const approveItemsFromCartFunction = (cartItem, productToDelete) => {
-  const mainCartList = cartItem.filter((eachCartItem) => {
-    return eachCartItem.id !== productToDelete.id;
-  });
-
-  const filteredCartList = cartItem.filter((eachCartItem) => {
-    return eachCartItem.id === productToDelete.id;
-  });
-
-  const filterCartObject = filteredCartList[0];
-
-  const newFilterCartObject = { ...filterCartObject, approved: true }
-
-
-  mainCartList.push(newFilterCartObject)
-  
-
-  return mainCartList
+export const approveOrder = (orders, orderToApprove) => {
+  const newOrders = approveOrderFunction(orders, orderToApprove);
+  return createAction(ORDERS_ACTION_TYPES.SET_CURRENT_ORDERS, newOrders);
 };
 
-export const approveItemFromCart = (cartItem, productToApprove) => {
-  const newCartItems = approveItemsFromCartFunction(cartItem, productToApprove);
-
-  // console.log(productToApprove);
-
-  return createAction(ORDERS_ACTION_TYPES.SET_CURRENT_ORDERS, newCartItems )
-}
+export const updateOrders = (orders, orderToAdd) => {
+  const newOrders = orders.push(orderToAdd)
+  return createAction(ORDERS_ACTION_TYPES.SET_CURRENT_ORDERS, newOrders);
+};
