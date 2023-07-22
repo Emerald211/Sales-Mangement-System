@@ -46,7 +46,7 @@ const Signin = () => {
   return (
     <div className=" mt-5 md:mb-5 font-serrat flex flex-col justify-center items-center h-screen">
       <div className=" rounded-[50%] flex justify-center items-center py-7 px-7 bg-white">
-        <h1 className=" text-2xl md:text-3xl lg:text-3xl text-amber-500 font-bold">
+        <h1 className=" text-2xl md:text-3xl lg:text-3xl text-green-800 font-bold">
           GadgetTrac 1.0
         </h1>
       </div>
@@ -65,9 +65,9 @@ const Signin = () => {
 
         <h4>
           (This is test mode, Kindly login email as{" "}
-          <span className=" font-bold text-amber-500">admin@gmail.com</span> and
+          <span className=" font-bold text-green-800">admin@gmail.com</span> and
           password as{" "}
-          <span className=" font-bold text-amber-500">admin2023</span>)
+          <span className=" font-bold text-green-800">admin2023</span>)
         </h4>
       </div>
       <form
@@ -110,7 +110,7 @@ const Signin = () => {
           </label>
         </div>
 
-        <button className=" w-full bg-amber-500 text-white rounded-md py-3">
+        <button className=" w-full bg-green-800 text-white rounded-md py-3">
           {isLoading ? "SIGNING IN..." : "SIGNIN"}
         </button>
       </form>
