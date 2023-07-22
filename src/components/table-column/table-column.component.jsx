@@ -68,7 +68,7 @@ const TableColumn = ({ order }) => {
               href="#"
               className="font-medium flex items-center text-white dark:text-gray-400 rounded  py-1 hover:underline"
             >
-              Approved <MdCheckCircle className=" mx-1" />
+              Approved <MdCheckCircle className=" mx-1 text-green-800" />
             </a>
           </td>
         ) : (

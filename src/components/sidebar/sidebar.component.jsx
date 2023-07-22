@@ -37,7 +37,7 @@ const Sidebar = () => {
       </button>
 
       {nav && (
-        <div className=" top-0 fixed flex flex-col items-center gap-3 text-white justify-center z-30 h-[100vh] w-[100vw] bg-red-600">
+        <div className=" top-0 fixed flex flex-col items-center gap-3 text-white justify-center z-30 h-[100vh] w-[100vw] bg-green-800">
           <h1
             onClick={() => setnav(false)}
             className=" absolute right-10 top-5"
@@ -99,14 +99,14 @@ const Sidebar = () => {
         aria-label="Sidebar"
       >
         <div
-          style={{ backgroundColor: "#F4B1A1" }}
-          className="h-full px-3 py-4 overflow-y- "
+         
+          className="h-full px-3 py-4 overflow-y- bg-green-800 "
         >
           <ul className="space-y-2">
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-base font-normal text-gray-900 hover:text-orange-500 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-white"
+                className="flex items-center p-2 text-base font-normal text-gray-900 hover:text-green-800 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-white"
               >
                 <svg
                   aria-hidden="true"
@@ -126,7 +126,7 @@ const Sidebar = () => {
             <li onClick={() => navigate("/home/orders")}>
               <a
                 href="#"
-                className="flex items-center p-2 text-base font-normal hover:text-orange-500 group-hover:stoke-orange-500 rounded-lg dark:text-white dark:hover:bg-white"
+                className="flex items-center p-2 text-base font-normal hover:text-green-800 group-hover:stoke-orange-500 rounded-lg dark:text-white dark:hover:bg-white"
               >
                 <svg
                   aria-hidden="true"
@@ -138,7 +138,7 @@ const Sidebar = () => {
                   <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                 </svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">Orders</span>
-                <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-white rounded-full dark:bg-white dark:text-orange-500">
+                <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-green-800 bg-white rounded-full dark:bg-white dark:text-green-800">
                   {totalOrders}
                 </span>
               </a>
@@ -146,7 +146,7 @@ const Sidebar = () => {
             <li onClick={() => navigate("/home/inbox")}>
               <a
                 href="#"
-                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-orange-500 dark:hover:bg-white"
+                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-green-800 dark:hover:bg-white"
               >
                 <svg
                   aria-hidden="true"
@@ -165,7 +165,7 @@ const Sidebar = () => {
             <li onClick={() => navigate("/home/users")}>
               <a
                 href="#"
-                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-orange-500 dark:hover:bg-white"
+                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-green-800 dark:hover:bg-white"
               >
                 <svg
                   aria-hidden="true"
@@ -186,7 +186,7 @@ const Sidebar = () => {
             <li onClick={() => navigate("/home/products")}>
               <a
                 href="#"
-                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-orange-500 dark:hover:bg-white"
+                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-green-800 dark:hover:bg-white"
               >
                 <svg
                   aria-hidden="true"
@@ -213,7 +213,7 @@ const Sidebar = () => {
             >
               <a
                 href="#"
-                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-orange-500 dark:hover:bg-white"
+                className="flex items-center p-2 text-base font-normal group-hover:stoke-orange-500 rounded-lg dark:text-white hover:text-green-800 dark:hover:bg-white"
               >
                 <svg
                   aria-hidden="true"

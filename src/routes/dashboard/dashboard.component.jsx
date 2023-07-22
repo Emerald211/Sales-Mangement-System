@@ -22,7 +22,6 @@ import {
   selectTotalRevenue,
 } from "../../store/orders/orders.selector";
 
-
 ChartJS.register(
   ArcElement,
   Tooltip,
@@ -75,82 +74,138 @@ const Dashboard = () => {
     <div>
       <div className="p-4 sm:ml-64">
         <div className="flex mb-4">
-          <h1 className=" text-red-400 text-xl font-bold ">Welcome</h1>
+          <h1 className=" text-green-800 text-xl font-bold ">Welcome</h1>
         </div>
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-          <div style={{color: "#FF5427"}} className="grid grid-cols-3 gap-4 mb-4">
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center h-24 rounded">
-              <TbChartPieFilled style={{color: "#F7C2B4"}} className=" text-2xl md:text-5xl " />
+          <div
+            style={{ color: "#FF5427" }}
+            className="grid grid-cols-3 gap-4 mb-4"
+          >
+            <div className="flex bg-green-800 flex-col text-white md:flex-row gap-2 md:gap-4 items-center justify-center h-24 rounded">
+              <TbChartPieFilled className=" text-2xl md:text-5xl text-white " />
               <div>
-                <h1 className=" font-bold text-sm md:text-2xl">${totalRevenue}</h1>
-                <p className=" text-[5px] md:text-sm text-gray-400 dark:text-gray-500">
-                  Total Revenue
-                </p>
+                <h1 className=" font-bold text-sm md:text-2xl">
+                  ${totalRevenue}
+                </h1>
+                <p className=" text-[5px] md:text-sm ">Total Revenue</p>
               </div>
             </div>
-            <div  style={{backgroundColor: "#FAE1DA"}} className="flex flex-col md:flex-row gap-1 text-center md:gap-4 items-center justify-center h-24 rounded bg-gray-50 dark:bg-slate-300">
-              <GiShoppingCart style={{color: "#F7C2B4"}} className=" text-2xl md:text-5xl text-gray-700" />
+            <div className="flex bg-green-800 flex-col md:flex-row gap-1 text-center md:gap-4 items-center justify-center h-24 rounded dark:bg-green-800">
+              <GiShoppingCart className=" text-2xl md:text-5xl text-white" />
               <div>
-                <h1 className=" font-bold text-sm md:text-2xl">{totalOrders}</h1>
-                <p className=" text-[5px] md:text-sm text-gray-400 dark:text-gray-500">
+                <h1 className=" font-bold text-sm text-white md:text-2xl">
+                  {totalOrders}
+                </h1>
+                <p className=" text-[5px] md:text-sm text-white">
                   Total Orders
                 </p>
               </div>
             </div>
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex flex-col md:flex-row gap-1 text-center items-center justify-center h-24 rounded bg-gray-50 dark:bg-slate-300">
-              <MdInventory2 style={{color: "#F7C2B4"}} className=" text-2xl md:text-5xl text-gray-700" />
+            <div className="flex flex-col md:flex-row gap-1 text-center items-center justify-center h-24 rounded dark:bg-green-800">
+              <MdInventory2 className=" text-2xl md:text-5xl text-white " />
               <div>
-                <h1 className=" font-bold text-sm md:text-2xl">{totalOrders}</h1>
-                <p className="  text-[5px] md:text-sm text-gray-400 dark:text-gray-500">
+                <h1 className=" font-bold text-sm md:text-2xl text-white">
+                  {totalOrders}
+                </h1>
+                <p className="  text-[5px] md:text-sm text-white">
                   Total Sales
                 </p>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center rounded bg-gray-50 h-56 dark:bg-slate-300">
+          <div className="grid text-white grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="flex items-center justify-center rounded  h-56 dark:bg-green-800">
               <Doughnut
                 data={{
                   labels: orders.map((data) => data.name),
                   datasets: [
                     {
-                      labels: "Total Sales",
+                      label: "Total Sales", // Note: use "label" instead of "labels" for the dataset label
                       data: orders.map((data) => data.price),
-                      backgroundColor: ["#F89F86", "#F93F0E", "#50AF95", "#f3ba2f", "#2a71d0"],
-                    
-                      
+                      backgroundColor: [
+                        "#F80F86",
+                        "#F93F0E",
+                        "#50AF95",
+                        "#f3ba2f",
+                        "#2a71d0",
+                      ],
                     },
                   ],
                 }}
+                options={{
+                  plugins: {
+                    legend: {
+                      labels: {
+                        color: "white", // Sets the legend text color to white
+                      },
+                    },
+                  },
+                  scales: {
+                    y: {
+                      ticks: {
+                        color: "white", // Sets the Y-axis tick text color to white
+                      },
+                    },
+                    x: {
+                      ticks: {
+                        color: "white", // Sets the X-axis tick text color to white
+                      },
+                    },
+                  },
+                }}
               />
             </div>
-            <div style={{backgroundColor: "#FAE1DA"}} className="flex items-center justify-center rounded bg-gray-50 h-56 dark:bg-slate-300">
+            <div className="flex items-center  justify-center rounded h-56 dark:bg-green-800">
               <Bar
                 data={{
                   labels: orders.map((data) => data.name),
                   datasets: [
                     {
-                      labels: "Total Sales",
+                      label: "Total Sales", // Note: use "label" instead of "labels" for the dataset label
                       data: orders.map((data) => data.price),
-                      backgroundColor: ["#F89F86", "#F93F0E", "#50AF95", "#f3ba2f", "#2a71d0"]
+                      backgroundColor: [
+                        "#F89F86",
+                        "#F93F0E",
+                        "#50AF95",
+                        "#f3ba2f",
+                        "#2a71d0",
+                      ],
                     },
                   ],
                 }}
+                options={{
+                  plugins: {
+                    legend: {
+                      labels: {
+                        color: "white", // Sets the legend text color to white
+                      },
+                    },
+                  },
+                  scales: {
+                    y: {
+                      ticks: {
+                        color: "white", // Sets the Y-axis tick text color to white
+                      },
+                    },
+                    x: {
+                      ticks: {
+                        color: "white", // Sets the X-axis tick text color to white
+                      },
+                    },
+                  },
+                }}
               />
             </div>
-          
           </div>
-          <div  className="flex items-center justify-center  mb-4 rounded ">
+          <div className="flex items-center justify-center  mb-4 rounded ">
             <div className="relative w-full overflow-x-auto shadow-md sm:rounded-lg">
               <h1 className=" font-bold mb-4">Recent Orders</h1>
               <Table />
             </div>
           </div>
-     
-          </div>
         </div>
       </div>
-
+    </div>
   );
 };
 

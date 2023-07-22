@@ -6,7 +6,7 @@ const Inbox = () => {
           
           <div className="p-4 sm:ml-64">
         <div className="flex mb-4">
-          <h1 className=" text-red-400 text-xl font-bold "> Inbox</h1>
+          <h1 className=" text-green-800 text-xl font-bold "> Inbox</h1>
         </div>
  
               <div>

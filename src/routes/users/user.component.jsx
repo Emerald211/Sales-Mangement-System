@@ -24,15 +24,15 @@ const Users = () => {
     <div className=" text-3xl text-main">
       <div className="p-4 sm:ml-64">
         <div className="flex mb-4">
-          <h1 className=" text-red-400 text-xl font-bold "> Users</h1>
+          <h1 className=" text-green-800 text-xl font-bold "> Users</h1>
         </div>
 
         <div>
                  <div>
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <thead
-                style={{ backgroundColor: "#F4B1A1" }}
-                className="text-xs text-white uppercase  dark:bg-gray-300 dark:text-white"
+                
+                className="text-xs text-white uppercase  dark:bg-green-800 dark:text-white"
               >
                 <tr>
                   <th scope="col" className="p-4">

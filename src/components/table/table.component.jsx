@@ -19,7 +19,7 @@ const Table = () => {
   return (
     <div>
         <table  className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead style={{backgroundColor: "#F4B1A1"}} className="text-xs text-white uppercase  dark:bg-gray-300 dark:text-white">
+        <thead className="text-xs text-white uppercase  dark:bg-green-800 dark:text-white">
           <tr>
             <th scope="col" className="p-4">
               <div className="flex items-center">
