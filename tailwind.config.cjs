@@ -13,6 +13,9 @@ module.exports = {
       
         serrat: ["Montserrat"],
       },
+      backgroundImage: {
+        main: "url('./src/assets/What-is-Sales.avif')"
+      }
     },
   },
   plugins: [],

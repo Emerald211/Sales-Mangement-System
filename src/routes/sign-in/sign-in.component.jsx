@@ -7,6 +7,7 @@ import {
 } from "../../utils/firebase/firebase";
 import { useDispatch } from "react-redux";
 import { setOrders } from "../../store/orders/orders.action";
+import { Button } from "@mui/material";
 
 const Signin = () => {
   const dispatch = useDispatch();
@@ -44,8 +45,24 @@ const Signin = () => {
   };
   console.log("Rendered");
   return (
-    <div className=" mt-5 md:mb-5 font-serrat flex flex-col justify-center items-center h-screen">
-      <div className=" rounded-[50%] flex justify-center items-center py-7 px-7 bg-white">
+    <>
+      <section className=" w-[100vw] flex flex-col lg:flex-row">
+        <div className=" flex flex-col justify-center items-center px-12 bg-green-800 rounded-b-3xl lg:rounded-b-none w-[100%] lg:w-[50%]">
+  			<div className=' grid grid-cols-1 gap-5 md:grid-cols-1 mt-12 mb-12 lg:mt-24 '>
+					<div className=' order-2 md:order-1 flex flex-col justify-center text-4xl md:text-5xl font-bold font-serrat  text-white'>
+						<h1>
+							Optimize Your Sales Process, With our Business Management tool
+						</h1>
+
+					
+					</div>
+
+					<div className=' order-1 md:order-2 h-[100px] w-[100px] md:w-[300px] md:h-[300px] rounded-2xl bg-main bg-cover bg-no-repeat md:bg-cover'></div>
+				</div>
+        </div>
+
+        <div className="lg:w-[50%] w-[100%] font-serrat flex flex-col justify-center items-center h-screen">
+      <div className=" rounded-[50%] flex justify-center items-center  bg-white">
         <h1 className=" text-2xl md:text-3xl lg:text-3xl text-green-800 font-bold">
           GadgetTrac 1.0
         </h1>
@@ -115,6 +132,8 @@ const Signin = () => {
         </button>
       </form>
     </div>
+      </section>
+   </>
   );
 };
 

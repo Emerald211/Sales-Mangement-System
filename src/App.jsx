@@ -20,6 +20,7 @@ import Users from "./routes/users/user.component";
 import Products from "./routes/products/product.component";
 import { setProduct } from "./store/product/product.action";
 import { selectOrders } from "./store/orders/orders.selector";
+import Landingpage from "./routes/landing-page/Landingpage";
 
 function App() {
   const orders = useSelector(selectOrders)
@@ -69,7 +70,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route element={<Signin />} path="/"></Route>
+        <Route element={<Landingpage />} path="/" ></Route>
+        <Route element={<Signin />} path="/login"></Route>
         <Route element={<Home />} path="/home">
           <Route index element={<Dashboard />}></Route>
           <Route path="orders" element={<Orders />}></Route>
